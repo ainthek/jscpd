@@ -43,6 +43,7 @@ cli.main (args, options) ->
   logger.profile "All time:"
   logger.info """
 jscpd - copy/paste detector for programming source code, developed by Andrey Kucherenko
+      - this is modified version by a.in.the.k
 """
   jscpd.run options
   logger.profile "All time:"

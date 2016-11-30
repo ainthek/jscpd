@@ -45,7 +45,8 @@ class TokenizerFactory
 
     language = TokenizerFactory::getLanguageByExtension extension
 
-    return off if language not in supportedLanguages
+    if language not in supportedLanguages
+      language = supportedLanguages[0]; # hack for explicit language and explictit extensions
 
     if language not of TokenizerFactory::tokenizers
       switch language
