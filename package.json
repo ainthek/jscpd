@@ -12,7 +12,7 @@
     "jscpd": "./bin/jscpd"
   },
   "dependencies": {
-    "blamer": "^0.1.9",
+    "blamer": "^1.0.1",
     "bluebird": "^3.0.5",
     "cli": ">=0.10.x",
     "cli-table": "^0.3.1",
