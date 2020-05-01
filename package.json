@@ -23,7 +23,8 @@
     "js-yaml": ">=3.4.x",
     "shelljs": ">=0.5.x",
     "underscore": ">=1.8.x",
-    "winston": ">=1.0.x"
+    "winston": ">=1.0.x",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "chai": ">=1.10.x",
@@ -41,12 +42,13 @@
     "xml2js": ">=0.4.x"
   },
   "scripts": {
-    "prepublish": "coffee -o lib -c src",
+    "prepublish": "npm run snyk-protect && coffee -o lib -c src",
     "test": "bash scripts/test.sh",
     "jscpd": "jscpd",
     "lint": "coffeelint $(find test src -name '*.coffee')",
     "coverage": "bash scripts/coverage.sh",
-    "coveralls": "cat ./coverage/lcov.info | coveralls"
+    "coveralls": "cat ./coverage/lcov.info | coveralls",
+    "snyk-protect": "snyk protect"
   },
   "repository": {
     "type": "git",
@@ -82,5 +84,6 @@
   "preferGlobal": true,
   "engines": {
     "node": ">=0.10.0"
-  }
+  },
+  "snyk": true
 }
